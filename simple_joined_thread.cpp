@@ -18,12 +18,12 @@ void doWork()
 int main()
 {
 	std::thread th1(doWork);
-	th1.detach();
 
 	for (int i = 1; i <= 20; i++)
 	{
 		std::cout << "main(): \t" << i << "\n";
 		usleep(500000);
 	}
-
+	
+	th1.join();
 }
