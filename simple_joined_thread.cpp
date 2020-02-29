@@ -25,5 +25,6 @@ int main()
 		usleep(500000);
 	}
 	
+	//Wait here until the th1 thread finishes to execute doWork()
 	th1.join();
 }
