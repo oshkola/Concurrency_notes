@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <thread>
 
-
 void doWork(int a, int b)
 {
 	std::cout << "******DOWORK STARTED****** \n";
