@@ -4,15 +4,15 @@
 
 void doWork()
 {
-	std::cout << "******DOWORK STARTED****** \n";
+	std::cout << "******DOWORK STARTED****** " << std::endl;
 
 	for (int i = 1; i <= 20; i++)
 	{
-		std::cout << "doWork(): \t" << i << "\n";
+		std::cout << "doWork(): \t" << i << std::endl;
 		usleep(1000000);
 	}
 
-	std::cout << "******DOWORK() FINISHED****** \n";
+	std::cout << "******DOWORK() FINISHED******" << std::endl;
 }
 
 int main()
@@ -21,10 +21,9 @@ int main()
 
 	for (int i = 1; i <= 20; i++)
 	{
-		std::cout << "main(): \t" << i << "\n";
+		std::cout << "main(): \t" << i <<std::endl;
 		usleep(500000);
 	}
-	
-	//Wait here until the th1 thread finishes to execute doWork()
+
 	th1.join();
 }
