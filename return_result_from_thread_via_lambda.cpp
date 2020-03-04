@@ -4,11 +4,11 @@
 
 int getSum(int a, int b)
 {
-	std::cout << "******CHANGEINPUT STARTED****** \n";
+	std::cout << "******GETSUM STARTED******" << std::endl;
 
 	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
-	std::cout << "******DOWORK() FINISHED****** \n";
+	std::cout << "******GETSUM FINISHED******" << std::endl;
 
 	return a + b;
 }
@@ -18,11 +18,12 @@ int main()
 {
 	int result;
 
-	auto f = [&result](){ result = getSum(5,7); };
-
-	std::thread th1(f);
+	std::thread th1([&result]()
+	{
+	    result = getSum(2,5);
+	});
 
 	th1.join();
 
-	std::cout << "result from main:  = " << result << "\n";
+	std::cout << "result from main:  = " << result << std::endl;
 }
